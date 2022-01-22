@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-RegistrationLoginSpringbootApplication<main>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.example.main.RegistrationLoginSpringbootApplication",
+      "projectName": "main",
+      "args": ""
+    }
+  ]
+}

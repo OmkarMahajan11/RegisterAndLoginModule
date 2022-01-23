@@ -7,6 +7,8 @@ import com.example.main.model.Role;
 import com.example.main.model.User;
 import com.example.main.repository.UserRepository;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,13 +21,19 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public User save(UserRegistrationDto u) {
+  public User save(UserRegistrationDto urdto) {
     User user = new User(
-      u.getFirstName(), u.getLastName(), 
-      u.getEmail(), u.getPassword(), 
+      urdto.getFirstName(), urdto.getLastName(), 
+      urdto.getEmail(), urdto.getPassword(), 
       Arrays.asList(new Role("ROLE_USER"))
     );
     
     return userRepository.save(user);
+  }
+
+  @Override
+  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    // TODO Auto-generated method stub
+    return null;
   }
 }
